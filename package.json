@@ -2,9 +2,17 @@
   "name": "react-nowtify",
   "version": "1.0.0",
   "description": "A tiny web component based on React to display a cute notification.",
+  "author": "Thomas Brodusch <tom4dev@users.noreply.github.com",
+   "contributors": [
+    {
+      "name": "Thomas Brodusch",
+      "email": "tom4dev@users.noreply.github.com"
+    },
+  ],
   "main": "dist/react-nowtify.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "ship": "npm install && webpack -p",
+    "watch": "webpack -d --progress --colors --watch",
   },
   "repository": {
     "type": "git",
@@ -23,7 +31,6 @@
     "react-notification",
     "react-alert"
   ],
-  "author": "Thomas Brodusch",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tom4dev/react-nowtify/issues"
