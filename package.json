@@ -1,0 +1,45 @@
+{
+  "name": "react-nowtify",
+  "version": "1.0.0",
+  "description": "A tiny web component based on React to display a cute notification.",
+  "main": "dist/react-nowtify.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tom4dev/react-nowtify.git"
+  },
+  "keywords": [
+    "notification",
+    "notifier"
+    "notify",
+    "alert",
+    "message",
+    "react",
+    "react-component",
+    "react-message",
+    "react-notify",
+    "react-notification",
+    "react-alert"
+  ],
+  "author": "Thomas Brodusch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tom4dev/react-nowtify/issues"
+  },
+  "homepage": "https://github.com/tom4dev/react-nowtify#readme",
+  "dependencies": {
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.9.0",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "webpack": "^1.13.1"
+  }
+}
