@@ -6,7 +6,7 @@ var webpack = require("webpack");
 module.exports = {
 
 	entry: {
-    App         : ['./src/react-notify.js'],
+    "react-nowtify"         : ['./src/react-notify.js'],
   },
 
 	output: {
@@ -20,7 +20,7 @@ module.exports = {
 
     alias: {
       "babel-polyfill"        : __dirname + '/node_modules/babel-polyfill/dist/polyfill.min.js',
-      react                   : __dirname + '/node_modules/react/react.js',
+      react                   : __dirname + '/node_modules/react/dist/react.js',
       "react-dom"             : __dirname + '/node_modules/react-dom/dist/react-dom.js',
     },
 
