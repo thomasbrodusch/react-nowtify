@@ -6,7 +6,8 @@ var webpack = require("webpack");
 module.exports = {
 
 	entry: {
-    "react-nowtify"         : ['./src/react-nowtify'],
+    'react-nowtify' : './src/entry.js',
+    'example'       : './example.js'
   },
 
 	output: {
@@ -21,7 +22,7 @@ module.exports = {
     alias: {
       "babel-polyfill"        : __dirname + '/node_modules/babel-polyfill/dist/polyfill.min.js',
       react                   : __dirname + '/node_modules/react/react.js',
-      "react-dom"             : __dirname + '/node_modules/react-dom/dist/react-dom.js',
+      "react-dom"             : __dirname + '/node_modules/react-dom/dist/react-dom.min.js',
     },
 
     extensions: [
@@ -32,13 +33,6 @@ module.exports = {
     ]
 
   },
-
-  plugins: [
-    new webpack.ProvidePlugin({
-      React           : "react",
-      ReactDOM        : "react-dom",
-    })
-  ],
 
   module: {
     preLoaders: [
@@ -53,6 +47,10 @@ module.exports = {
             test: /\.jsx$/,
             exclude: /node_modules/,
             loader: 'babel'
+        },
+        {
+            test: /\.css$/,
+            loader: 'style-loader!css-loader?sourceMap'
         }
     ]
   },

@@ -1,72 +1,115 @@
 /**
  * React-Nowtify 
- * Notification Item (Unique notification)
+ * Notification Item 
  */
+require('../style.css');
 
 class NotificationItem extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            convertClass: {
-                'success' : 'check',
-                'danger' : 'times',
-                'warning' : 'warning',
-                'info' : 'info'
-            }
-        };
+  constructor(props) {
+    super(props);
+    this.state = {
+        convertClass: {
+            'success' : 'check',
+            'danger' : 'times',
+            'warning' : 'warning',
+            'info' : 'info',
+            'default': 'rebel'
+        },
+        cssClass: new Array(
+            'nowtify-box__notification-item',
+            'nowtify-box__notification-item_growl',
+            'nowtify-box__notification-item_slideRight'
+        )
+    };
+  }
+
+  componentDidMount(){
+    this.showNotification(this.props.displayTimeout);
+  }
+
+  /**
+   * Display the notification during a timeout
+   * @param  int displayTimeout during of display
+   */
+  showNotification(displayTimeout){
+    return setTimeout(function(){
+        let newItemClass = this.state.cssClass;
+        newItemClass.splice(newItemClass.indexOf('nowtify-box__notification-item_slideRight'), 1, 'nowtify-box__notification-item_slideLeft');
+        this.setState({
+            cssClass: newItemClass
+        });
+        this.hideNotification();
+    }.bind(this), displayTimeout);
+  }
+  
+  /**
+   * Hide the notification
+   */
+  hideNotification(noTimeout = false){
+    let hide;
+    if(noTimeout){
+        hide = this.setState({
+          cssClass: this.state.cssClass.concat(['nowtify-box__notification-item_hide'])
+        });
+    } else {
+      hide = setTimeout(function(){
+              this.setState({
+              cssClass: this.state.cssClass.concat(['nowtify-box__notification-item_hide'])
+             });
+      }.bind(this), 400);
     }
+    return hide;
+  }
 
-    componentDidMount(){
-        this.showNotification(this.props.position, this.props.displayTimeout);
-    }
+  /**
+   * Dynamically update the notification's css properties
+   */
+  itemCssClass(){
+    let cssClass = {
+      itemClass: this.state.cssClass.join(' ') 
+                + ' ' + this.props.data.className
+                + ' ' + this.props.data.dismissible ? 'nowtify-box__notification-item_dismissible' : '',
+      iconClass: 'nowtify-box__notification-item__icon_' + this.props.data.class,
+      fontAwesomeIcon: 'fa fa-' + this.state.convertClass[this.props.data.class]
+    };
+    cssClass.itemClass = this.state.cssClass.join(' ');
+    cssClass.itemClass += ' ' + this.props.data.class;
+    cssClass.itemClass += ' ' + this.props.data.dismissible ? 'nowtify-box__notification-item_dismissible' : '';
+    return cssClass;
+  }
 
-    // Display Notification with a timeout.
-    showNotification(id, timeout){
-        setTimeout(function(){
-            $('#notification-' + id).find('.ns-box')
-                .removeClass('ns-show')
-                .addClass('ns-hide')
-            setTimeout(function(){
-                $('#notification-' + id).hide();
-            }, 500);
-        }, timeout);
-    }
+  /**
+   * Hide notification on click 
+   */
+  handleCloseClick(){
+    return this.hideNotification();
+  }
 
-    render() {
+  render() {
+    let closeButton = this.props.data.dismissible ? <div className="nowtify-box__notification-item__close" 
+                            aria-label="Close"
+                            onClick={() => this.hideNotification(true)}>
+                            <i className="fa fa-times" aria-hidden="true"></i>
+                        </div> : false ;
+    //let icon = 'fa fa-' + this.state.convertClass[this.props.data.class];
+    let css = this.itemCssClass();
+    return (
+      <div className={css.itemClass}
+          data-nowtify-notification-id={this.props.position}>
 
-        var button;
-        var alertClass = 'alert ns-box ns-growl ns-effect-slide ns-type-notice ns-show ' + this.props.data.class;
-        var icon = 'fa fa-' + this.state.convertClass[this.props.data.class];
+        <div className={'nowtify-box__notification-item__icon ' + css.iconClass}>
+            <i className={css.fontAwesomeIcon} aria-hidden="true"></i>
+        </div>
+          <div className="nowtify-box__notification-item__message">
+              <p>{this.props.data.message}</p>
+          </div>
 
-        if(this.props.data.dismissible){
-            button = <button 
-                        type="button" 
-                        className="close" 
-                        data-dismiss="alert" 
-                        aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                    </button>;
-        }
+          {closeButton}
 
-        return (
-            <div id={'notification-' +this.props.position}>
-
-                <div className={alertClass}>
-                    <div className="alert-state">
-                        <i className={icon}></i>
-                    </div>
-
-                    <div className={this.props.data.dismissible ? 'alert-dismissible' : 'alert'} role="flash">
-                        {button}
-                        <p>{this.props.data.message}</p>
-                    </div>
-                </div>
-            </div>
-        );
-
-    }
-
+      </div>
+    );
+  }
 };
 
-module.exports = NotificationItem;
+export default NotificationItem;

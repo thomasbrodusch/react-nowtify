@@ -9,6 +9,6 @@ root = true
 #
 # Javascript used styleguide : Airbnb > https://github.com/airbnb/javascript
 
-[*.js]
+[*.{js,jsx}]
 indent_style = space
 indent_size = 2

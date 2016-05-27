@@ -2,8 +2,9 @@
  * React-Nowtify 
  * Notification Box (Notifications container)
  */
-
 import NotificationList from './NotificationList';
+const style = require('../style.css');
+
 
 class NotificationBox extends React.Component {
 
@@ -14,11 +15,11 @@ class NotificationBox extends React.Component {
       };
     }
 
-    handleNewNotification(notification){
-      if(this.props.isArray){
-          this.multipleNotification(notification);
+    handleNewNotification(notifications){
+      if(notifications.length > 1){
+          this.multipleNotification(notifications);
       }else{
-        this.singleNotification(notification);
+        this.singleNotification(notifications[0]);
       }
     }
 
@@ -33,9 +34,9 @@ class NotificationBox extends React.Component {
     }
 
     render() {
-      this.handleNewNotification(this.props.data);
+      this.handleNewNotification(this.props.notifications);
       return (
-        <div id="notification-box">                    
+        <div className="nowtify-box">                    
           <NotificationList data={this.state.notifications}/>
         </div>
 
@@ -44,4 +45,19 @@ class NotificationBox extends React.Component {
 
 };
 
-module.exports = NotificationBox;
+/**
+ * Show an array of notifications
+ * @param  [] notifications Array of formated notifications.
+ * @return {[type]}               [description]
+ */
+function show(containerID, notifications ){
+
+  ReactDOM.render(
+    <NotificationBox notifications={notifications} />,
+    document.getElementById(containerID)
+  );
+};
+
+export let Nowtify = {
+  show
+};

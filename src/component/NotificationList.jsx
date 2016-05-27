@@ -2,7 +2,6 @@
  * React-Nowtify 
  * Notification List (Notifications list)
  */
-
 import NotificationItem from './NotificationItem';
 
 function NotificationList({ data }) {
@@ -13,10 +12,10 @@ function NotificationList({ data }) {
     });
 
     return (
-        <div className="notif-info">
+        <div className="nowtify__notification-list">
           {notificationNodes}
         </div>
     );
 };
 
-module.exports = NotificationList;
+export default NotificationList;
