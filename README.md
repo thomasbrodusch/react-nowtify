@@ -11,7 +11,7 @@ Nowtify uses a number of open source projects to work properly:
 
 * [ReactJS](https://facebook.github.io/react/) - A JavaScript library for building User Interfaces.
 * [Font-Awesome](http://fontawesome.io/) - The iconic font & css toolkit !
-
+* [NotificationSounds](https://notificationsounds.com/) — Sound under Creative Common license
 
  
 ### Installation

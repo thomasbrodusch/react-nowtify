@@ -1,7 +1,8 @@
 /**
  * React-Nowtify 
- * Notification Box (Notifications container)
- */
+ * Notification Box (Notifications container) 
+*/
+
 import NotificationList from './NotificationList';
 const style = require('../style.css');
 
@@ -12,20 +13,28 @@ class NotificationBox extends React.Component {
       super(props);
       this.state = {
         notifications : [],
-        defaultConfig: {
-          displayTimeout: props.config.displayTimeout ? props.config.displayTimeout : 5000,
-          transition: props.config.transition ? props.config.transisiton :'growl',
-          dismissible: props.config.dismissible ? props.config.dismissible :false
-        }
+        defaultConfig: {}
       };
     }
     
     componentWillMount(){
+      this.setConfig();
       this.handleNewNotifications(this.props.notifications);
     }
 
     componentWillUpdate(props){
       this.handleNewNotifications(props.notifications);
+    }
+
+    setConfig(){
+      this.setState({
+        defaultConfig: {
+          displayTimeout: this.props.config.displayTimeout ? this.props.config.displayTimeout : 5000,
+          transition: this.props.config.transition ? this.props.config.transisiton :'growl',
+          dismissible: this.props.config.dismissible ? this.props.config.dismissible :false,
+          sound: this.props.config.sound ? this.props.config.sound :false,
+        }
+      })
     }
     
     /**
@@ -73,5 +82,6 @@ function show(notifications, params){
     document.getElementById(params.containerID)
   );
 };
+
 
 export let Nowtify = { show };

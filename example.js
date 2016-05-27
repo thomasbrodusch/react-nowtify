@@ -23,17 +23,25 @@ var NOTIFICATIONS_EXAMPLES =[
     }
 ];
 
-// Multiple notification
+
+/**
+ * Multiple notification
+ */
 setTimeout(function(){
   Nowtify.show( NOTIFICATIONS_EXAMPLES, {
-    containerID: 'nowtify-container',
-    displayTimeout: 6000, // Defaut 5000ms
-    dismissible: false
+    containerID: 'nowtify-wrapper',
+    displayTimeout: 6000, // Default 5000ms
+    dismissible: false,
+    sound: false // Default true
   });
 }, 1000);
 
 
-// Unique notification hide on close
+
+
+/**
+ * Unique notification hide on close
+ */
 $(document).ready(function(){
   let notification = [
     {
@@ -41,6 +49,15 @@ $(document).ready(function(){
       type       : 'warning',
       dismissible : true,
       hideOnClose: true
+  }];
+
+   let notificationWithSound = [
+    {
+      message     : 'Woooot Wooot ! I\'m a notification with sound !',
+      type       : 'success',
+      icon        : 'rebel',
+      dismissible : true,
+      sound: true
   }];
 
   let notifications =[ 
@@ -66,7 +83,7 @@ $(document).ready(function(){
             
 
               Nowtify.show( notification, {
-                  containerID: 'nowtify-container',
+                  containerID: 'nowtify-wrapper',
                   skin: 'growl',
                   displayTimeout: 3000, // Defaut 5000ms
                   dismissible: false
@@ -75,10 +92,22 @@ $(document).ready(function(){
             break;
         case 'multiple':
             Nowtify.show( notifications, {
-              containerID: 'nowtify-container',
+              containerID: 'nowtify-wrapper',
               displayTimeout: 6000, // Defaut 5000ms
               dismissible: false
             });
+         case 'withSound':
+            
+
+              Nowtify.show( notificationWithSound, {
+                  containerID: 'nowtify-wrapper',
+                  skin: 'growl',
+                  displayTimeout: 3000, // Defaut 5000ms
+                  dismissible: false,
+                  sound: true
+              });
+
+            break;
             break;
     }
   });

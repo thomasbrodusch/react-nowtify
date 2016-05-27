@@ -16,11 +16,6 @@
         .logo{
             width: 50%;
         }
-        #nowtify-container{
-            position: absolute;
-            top: 15px;
-            right: 15px;
-        }
         pre{
             background: #0E1823;
             color: #218EFF;
@@ -40,7 +35,7 @@
                 
                 <button class="btn" data-action="multiple">Show multiple notifications</button>
                 <button class="btn" data-action="unique">Show a new notification (hide on close)</button>
-
+                <button class="btn" data-action="withSound">Show a new notification (with a sound !)</button>
             </div>
           
             
@@ -76,7 +71,7 @@ Nowtify.show( notifications, {
             
             <h3 class="text-right">#3 ... No step 3 cause it's done !</h3>
         </header>
-        <div id="nowtify-container"></div>
+        <div id="nowtify-wrapper"></div>
         </div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

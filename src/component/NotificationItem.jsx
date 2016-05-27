@@ -20,7 +20,8 @@ class NotificationItem extends React.Component {
             'nowtify-box__notification-item',
             'nowtify-box__notification-item_growl',
             'nowtify-box__notification-item_slideRight'
-        )
+        ),
+        audio: './src/assets/notification-sound.mp3'
     };
   }
 
@@ -33,6 +34,9 @@ class NotificationItem extends React.Component {
    * @param  int displayTimeout during of display
    */
   showNotification(displayTimeout){
+    if(this.props.data.sound || this.props.sound){
+      this.playNotificationSound();
+    }
     return setTimeout(function(){
         let newItemClass = this.state.cssClass;
         
@@ -43,7 +47,6 @@ class NotificationItem extends React.Component {
         this.setState({
             cssClass: newItemClass
         });
-       
     }.bind(this), displayTimeout);
   }
   
@@ -64,6 +67,12 @@ class NotificationItem extends React.Component {
       }.bind(this), 400);
     }
     return hide;
+  }
+
+
+  playNotificationSound(){
+    var audio = new Audio(this.state.audio);
+    audio.play();
   }
 
   /**
@@ -95,6 +104,7 @@ class NotificationItem extends React.Component {
     }
     return 'fa fa-' + icon;
   }
+
 
   /**
    * Hide notification on click 
