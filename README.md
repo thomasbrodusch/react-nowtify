@@ -20,13 +20,12 @@ ___
 Nowtify requires [React](https://facebook.github.io/react/) and [Font-Awesome](http://fontawesome.io/) to run.
 
 > Install it with [NPM](https://www.npmjs.com/package/react-nowtify)
-
 ```sh
 $ npm i react-nowtify --save
 ```
 
  > Format your notifications following this pattern:
-```
+```javascript
 var notifications = [
     {
         message     : 'This is the first notification.',
@@ -41,13 +40,15 @@ var notifications = [
 ```
 
  > Initialize Nowtify by passing it your notifications.
-```
+```javascript
 Nowtify.show( notifications, {
   containerID   : 'ID_CONTAINER',
   displayTimeout: 6000,         // Default 5000ms
   dismissible   :  false        // Default false
 });
 ```
+
+
 ### et voilà !
 
 
