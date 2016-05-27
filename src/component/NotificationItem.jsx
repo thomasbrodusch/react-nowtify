@@ -13,7 +13,7 @@ class NotificationItem extends React.Component {
             'success' : 'check',
             'danger' : 'times',
             'warning' : 'warning',
-            'info' : 'info',
+            'info' : 'bell',
             'default': 'rebel'
         },
         cssClass: new Array(
@@ -35,11 +35,15 @@ class NotificationItem extends React.Component {
   showNotification(displayTimeout){
     return setTimeout(function(){
         let newItemClass = this.state.cssClass;
-        newItemClass.splice(newItemClass.indexOf('nowtify-box__notification-item_slideRight'), 1, 'nowtify-box__notification-item_slideLeft');
+        
+         if (!this.props.data.hideOnClose) {
+          newItemClass.splice(newItemClass.indexOf('nowtify-box__notification-item_slideRight'), 1, 'nowtify-box__notification-item_slideLeft');
+          this.hideNotification();
+        }
         this.setState({
             cssClass: newItemClass
         });
-        this.hideNotification();
+       
     }.bind(this), displayTimeout);
   }
   
@@ -70,13 +74,26 @@ class NotificationItem extends React.Component {
       itemClass: this.state.cssClass.join(' ') 
                 + ' ' + this.props.data.className
                 + ' ' + this.props.data.dismissible ? 'nowtify-box__notification-item_dismissible' : '',
-      iconClass: 'nowtify-box__notification-item__icon_' + this.props.data.class,
-      fontAwesomeIcon: 'fa fa-' + this.state.convertClass[this.props.data.class]
+      iconClass: 'nowtify-box__notification-item__icon_' + this.props.data.type,
+      fontAwesomeIcon: this.iconCssClass(this.props.data.icon)
     };
     cssClass.itemClass = this.state.cssClass.join(' ');
     cssClass.itemClass += ' ' + this.props.data.class;
     cssClass.itemClass += ' ' + this.props.data.dismissible ? 'nowtify-box__notification-item_dismissible' : '';
     return cssClass;
+  }
+
+  /**
+   * Convert a type/icon to a Font-Awesome icon
+   * @param  string icon 
+   * @return string      Font-Awesome formated icon
+   */
+  iconCssClass(icon){
+    console.log
+    if( icon === undefined ) {
+      icon = this.state.convertClass[this.props.data.type] != undefined ? this.state.convertClass[this.props.data.type] : this.props.data.type;
+    }
+    return 'fa fa-' + icon;
   }
 
   /**

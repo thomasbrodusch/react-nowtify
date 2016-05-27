@@ -19,30 +19,42 @@ class NotificationBox extends React.Component {
         }
       };
     }
-
-    handleNewNotification(notifications){
-      if(notifications.length > 1){
-          this.multipleNotification(notifications);
-      }else{
-        this.singleNotification(notifications[0]);
-      }
+    
+    componentWillMount(){
+      this.handleNewNotifications(this.props.notifications);
     }
 
-    singleNotification(notification, fix){
-      this.state.notifications.push(notification);
+    componentWillUpdate(props){
+      this.handleNewNotifications(props.notifications);
     }
-
-    multipleNotification(notificationArray){
-      notificationArray.map(function(notification){
-        this.singleNotification(notification)
+    
+    /**
+     * Dispatch notifications
+     * @param  [] notifications Array of formatted notifications (JSON)
+     * @return {[type]}               [description]
+     */
+    handleNewNotifications(notifications){
+      notifications.map(function(notification){
+        this.addNotification(notification)
       }.bind(this));
     }
 
+    /**
+     * Display one notification
+     * @param  {} notification JSON formatted notification
+     * @return  inject new notification to the component notifications pool.
+     */
+    addNotification(notification){
+      return this.state.notifications.push(notification);
+    }
+
     render() {
-      this.handleNewNotification(this.props.notifications);
       return (
         <div className="nowtify-box">                    
-          <NotificationList data={this.state.notifications} config={this.state.defaultConfig}/>
+          <NotificationList 
+            data={this.state.notifications} 
+            config={this.state.defaultConfig}
+          />
         </div>
 
       );
@@ -57,11 +69,9 @@ class NotificationBox extends React.Component {
  */
 function show(notifications, params){
   ReactDOM.render(
-    <NotificationBox notifications={notifications} config={params}/>,
+    <NotificationBox notifications={notifications} config={params} />,
     document.getElementById(params.containerID)
   );
 };
 
-export let Nowtify = {
-  show
-};
+export let Nowtify = { show };

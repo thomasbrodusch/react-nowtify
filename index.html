@@ -4,15 +4,85 @@
         <meta charset="utf-8">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>React Notify</title>
+        <title>Nowtify | lovely notification.</title>
         <link rel="author" href="humans.txt">
         <link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <style>
+        body{
+            background: #2c3e50;
+            color: white;
+        }
+        .logo{
+            width: 50%;
+        }
+        #nowtify-container{
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        pre{
+            background: #0E1823;
+            color: #218EFF;
+        }
+        .btn{
+            background-color: #218EFF; 
+        }
+        </style>
     </head>
     <body>
+        <div class="container">
+            <header>
+            <img src="logo.png" class="logo" alt="nowtify-logo" />
+              <h4>Tiny React component to display notifications. </h4>
+            <h5>React / CSS transitions / Flexbox / Font-Awesome</h5>
+            <div class="actions">
+                
+                <button class="btn" data-action="multiple">Show multiple notifications</button>
+                <button class="btn" data-action="unique">Show a new notification (hide on close)</button>
+
+            </div>
+          
+            
+            <h3>How to use Nowtify in my project ?</h3>
+            <div class="row">
+                <h5 class="col-md-4">#1 Format your notifications</h5>
+<pre class="col-md-8">
+let notifications = [
+     {
+        message     : 'This is the first notification.', // Your message.
+        type        : 'success',                        // success, info, warning, danger
+        dismissible : true                              // Default: false
+    },
+     {
+        message     : 'This is the second notification',
+        type        : 'warning',
+    } 
+];
+</pre>
+            </div>
+            <div class="row">
+                <h5 class="col-md-4">#2 Pass your notifications to Nowtify initialized on an DOM element (indicate element's ID)</h5>
+<pre class="col-md-8">
+Nowtify.show( notifications, {
+  containerID   : 'ID_CONTAINER',
+  displayTimeout: 6000,         // Default 5000ms
+  dismissible   :  false        // Default false
+});
+</pre>
+
+            </div>
+    
+            
+            <h3 class="text-right">#3 ... No step 3 cause it's done !</h3>
+        </header>
         <div id="nowtify-container"></div>
+        </div>
         
-        <script src="node_modules/react/dist/react.js"></script>
-        <script src="node_modules/react-dom/dist/react-dom.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.1.0/react-dom.min.js"></script>
         <script src="dist/example.js"></script>
+
     </body>
 </html>

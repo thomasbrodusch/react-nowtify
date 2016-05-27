@@ -1,3 +1,8 @@
+#nowtify-container{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
 .nowtify-box{
 	z-index: 1000;
 	color: white;
@@ -18,8 +23,8 @@
 
 /**  Notification icon */
 .nowtify-box__notification-item__icon{
-    padding: 25px 15px;
-    min-width: 15px;
+    padding: 20px 15px;
+    min-width: 45px;
 }
 .nowtify-box__notification-item__icon_default{background: #95a5a6;}
 .nowtify-box__notification-item__icon_info{background: #379adc;}
@@ -33,6 +38,10 @@
   text-align: left;
   padding: 0px 10px;
   flex-grow: 1;
+}
+.nowtify-box__notification-item__message > p{
+  padding:5px 5px;
+  margin: 0px;
 }
 
 /**  Notification close buttpn */
