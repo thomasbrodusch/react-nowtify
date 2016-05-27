@@ -11,7 +11,12 @@ class NotificationBox extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        notifications : []
+        notifications : [],
+        defaultConfig: {
+          displayTimeout: props.config.displayTimeout ? props.config.displayTimeout : 5000,
+          transition: props.config.transition ? props.config.transisiton :'growl',
+          dismissible: props.config.dismissible ? props.config.dismissible :false
+        }
       };
     }
 
@@ -37,7 +42,7 @@ class NotificationBox extends React.Component {
       this.handleNewNotification(this.props.notifications);
       return (
         <div className="nowtify-box">                    
-          <NotificationList data={this.state.notifications}/>
+          <NotificationList data={this.state.notifications} config={this.state.defaultConfig}/>
         </div>
 
       );
@@ -50,11 +55,10 @@ class NotificationBox extends React.Component {
  * @param  [] notifications Array of formated notifications.
  * @return {[type]}               [description]
  */
-function show(containerID, notifications ){
-
+function show(notifications, params){
   ReactDOM.render(
-    <NotificationBox notifications={notifications} />,
-    document.getElementById(containerID)
+    <NotificationBox notifications={notifications} config={params}/>,
+    document.getElementById(params.containerID)
   );
 };
 

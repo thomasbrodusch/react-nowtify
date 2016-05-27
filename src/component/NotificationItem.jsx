@@ -25,7 +25,7 @@ class NotificationItem extends React.Component {
   }
 
   componentDidMount(){
-    this.showNotification(this.props.displayTimeout);
+    this.showNotification(this.props.data.displayTimeout ?  this.props.data.displayTimeout : this.props.displayTimeout);
   }
 
   /**
@@ -92,7 +92,6 @@ class NotificationItem extends React.Component {
                             onClick={() => this.hideNotification(true)}>
                             <i className="fa fa-times" aria-hidden="true"></i>
                         </div> : false ;
-    //let icon = 'fa fa-' + this.state.convertClass[this.props.data.class];
     let css = this.itemCssClass();
     return (
       <div className={css.itemClass}

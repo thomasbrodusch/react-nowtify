@@ -22,9 +22,9 @@
     min-width: 15px;
 }
 .nowtify-box__notification-item__icon_default{background: #95a5a6;}
-.nowtify-box__notification-item__icon_info{background: #2980b9;}
-.nowtify-box__notification-item__icon_success{background: #27ae60;}
-.nowtify-box__notification-item__icon_warning{background: #d35400;}
+.nowtify-box__notification-item__icon_info{background: #379adc;}
+.nowtify-box__notification-item__icon_success{background: #37d078;}
+.nowtify-box__notification-item__icon_warning{background: #e67e22;}
 .nowtify-box__notification-item__icon_danger{background: #e74c3c;}
 
 /** Notification message */
