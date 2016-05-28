@@ -13,6 +13,7 @@ module.exports = exports = {
   plugins: [
     'react'
   ],
+  "extends": "airbnb",
   rules: {
     "strict" : OFF,
     "no-console": OFF,
