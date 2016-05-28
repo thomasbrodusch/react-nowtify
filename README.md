@@ -28,32 +28,33 @@ Nowtify requires [React](https://facebook.github.io/react/) and [Font-Awesome](h
 $ npm i react-nowtify --save
 ```
 
- > Format your notifications following this pattern:
-```javascript
-var notifications = [
-    {
-        message     : 'This is the first notification.',
-        type        : 'success',        // 'success', 'info', 'warning', 'danger'
-        dismissible : true              // Default: false
-    },
-    {
-        message     : 'This is the second notification',
-        type        : 'warning'
-    } 
-];
-```
 
- > Initialize Nowtify by passing it your notifications.
+ > Initialize Nowtify
 ```javascript
-Nowtify.show( notifications, {
-  containerID   : 'ID_CONTAINER',
-  displayTimeout: 6000,         // Default 5000ms
-  dismissible   :  false        // Default false
+Nowtify.init({
+  containerID     : 'ID_CONTAINER',
+  displayTimeout  : 6000,         // Default 5000ms
+  dismissible     :  false        // Default false
+  sound           : true          // Default: false
 });
 ```
 
-
+> Format your notifications and pass it to Nowtify
+```javascript
+var notifications = [
+    {
+      message     : 'The message of your first notification',
+      type        : 'success', // 'succes','info','warning', 'danger'
+      icon        : 'rebel',  // Default: false (You can specify a specific font-awesome icon !)
+      dismissible : true,     // Default: false
+      hideOnClose : true,     // Default: false
+      sound       : true      // Default: false
+    }
+];
+Nowtify.show( notifications );
+```
 ### et voilà !
+Have a look on 'examples.js' ;)
 
 
 
@@ -71,6 +72,7 @@ Open your favorite Terminal and run these commands.
 $ git clone https://github.com/tom4dev/react-nowtify nowtify
 $ cd nowtify
 $ npm install
+$ npm start
 ```
 
 Developpment mode watcher (Webpack):
@@ -81,8 +83,7 @@ $ npm run watch
 ... And you're ready to code !
 
 ### Todos
-
- - Add Code Comments
+ - proptype ... 
  - Add transition/animation options
  - Add skin
  - Enable skin customisation
