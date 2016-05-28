@@ -2,9 +2,8 @@
  * React-Nowtify 
  * Notification Item 
  */
-require('../style.css');
 
-class NotificationItem extends React.Component {
+class NowtifyItem extends React.Component {
 
   constructor(props) {
     super(props);
@@ -26,23 +25,22 @@ class NotificationItem extends React.Component {
   }
 
   componentDidMount(){
-    this.showNotification(this.props.data.displayTimeout ?  this.props.data.displayTimeout : this.props.displayTimeout);
+    this.show(this.props.data.displayTimeout ?  this.props.data.displayTimeout : this.props.displayTimeout);
   }
+
 
   /**
    * Display the notification during a timeout
    * @param  int displayTimeout during of display
    */
-  showNotification(displayTimeout){
-    if(this.props.data.sound || this.props.sound){
-      this.playNotificationSound();
-    }
+  show(displayTimeout){
+    this.props.playSound();  
+    
     return setTimeout(function(){
         let newItemClass = this.state.cssClass;
-        
          if (!this.props.data.hideOnClose) {
           newItemClass.splice(newItemClass.indexOf('nowtify-box__notification-item_slideRight'), 1, 'nowtify-box__notification-item_slideLeft');
-          this.hideNotification();
+          this.hide();
         }
         this.setState({
             cssClass: newItemClass
@@ -53,26 +51,22 @@ class NotificationItem extends React.Component {
   /**
    * Hide the notification
    */
-  hideNotification(noTimeout = false){
-    let hide;
+  hide(noTimeout = false){
     if(noTimeout){
-        hide = this.setState({
+      this.setState({
           cssClass: this.state.cssClass.concat(['nowtify-box__notification-item_hide'])
-        });
+      });
+      //this.props.onRemove(this.props.position);
     } else {
-      hide = setTimeout(function(){
+      setTimeout(function(){
               this.setState({
               cssClass: this.state.cssClass.concat(['nowtify-box__notification-item_hide'])
-             });
+      });
+      //this.props.onRemove(this.props.position);
       }.bind(this), 400);
     }
-    return hide;
-  }
+    this.props.onRemove(this.props.position);
 
-
-  playNotificationSound(){
-    var audio = new Audio(this.state.audio);
-    audio.play();
   }
 
   /**
@@ -110,13 +104,13 @@ class NotificationItem extends React.Component {
    * Hide notification on click 
    */
   handleCloseClick(){
-    return this.hideNotification();
+    return this.hide();
   }
 
   render() {
     let closeButton = this.props.data.dismissible ? <div className="nowtify-box__notification-item__close" 
                             aria-label="Close"
-                            onClick={() => this.hideNotification(true)}>
+                            onClick={() => this.hide(true)}>
                             <i className="fa fa-times" aria-hidden="true"></i>
                         </div> : false ;
     let css = this.itemCssClass();
@@ -138,4 +132,4 @@ class NotificationItem extends React.Component {
   }
 };
 
-export default NotificationItem;
+export default NowtifyItem;

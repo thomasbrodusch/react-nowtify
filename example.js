@@ -1,4 +1,6 @@
-import { Nowtify } from './src/component/NotificationBox';
+import { Nowtify } from './dist/react-nowtify';
+
+console.log(Nowtify);
 
 var NOTIFICATIONS_EXAMPLES =[ 
     {
@@ -23,27 +25,7 @@ var NOTIFICATIONS_EXAMPLES =[
     }
 ];
 
-
-/**
- * Multiple notification
- */
-setTimeout(function(){
-  Nowtify.show( NOTIFICATIONS_EXAMPLES, {
-    containerID: 'nowtify-wrapper',
-    displayTimeout: 6000, // Default 5000ms
-    dismissible: false,
-    sound: false // Default true
-  });
-}, 1000);
-
-
-
-
-/**
- * Unique notification hide on close
- */
-$(document).ready(function(){
-  let notification = [
+var notification = [
     {
       message     : 'Ooops !',
       type       : 'warning',
@@ -51,7 +33,7 @@ $(document).ready(function(){
       hideOnClose: true
   }];
 
-   let notificationWithSound = [
+   var notificationWithSound = [
     {
       message     : 'Woooot Wooot ! I\'m a notification with sound !',
       type       : 'success',
@@ -60,7 +42,7 @@ $(document).ready(function(){
       sound: true
   }];
 
-  let notifications =[ 
+  var notifications =[ 
     {
         message     : 'This a cute success message, sexy isn\'t it ?',
         type       : 'success',
@@ -77,39 +59,63 @@ $(document).ready(function(){
     }
 ];
 
-  $('button').click(function(){
-    switch( $(this).data('action')) {
-        case 'unique':
-            
+// 1 — Init Nowtify
+Nowtify.init({
+  containerID     : 'nowtify-wrapper', // Default: 'nowtify-wrapper'
+  displayTimeout  : 6000,     // Default: 5000 (ms)
+  dismissible     : false,    // Default: false
+  keepHistory     : false,    // Default: true
+  sound           : false     // Default: true
+});
 
-              Nowtify.show( notification, {
-                  containerID: 'nowtify-wrapper',
-                  skin: 'growl',
-                  displayTimeout: 3000, // Defaut 5000ms
-                  dismissible: false
-              });
+// 2 — You can get the config
+console.info('Nowtify configuration : ', Nowtify.getConfig());
 
-            break;
-        case 'multiple':
-            Nowtify.show( notifications, {
-              containerID: 'nowtify-wrapper',
-              displayTimeout: 6000, // Defaut 5000ms
-              dismissible: false
-            });
-         case 'withSound':
-            
+// 3 - You can set/edit when you want config
+let newConfig = {
+  displayTimeout  : 3000, 
+  dismissible     : true,
+  sound           : false
+};
 
-              Nowtify.show( notificationWithSound, {
-                  containerID: 'nowtify-wrapper',
-                  skin: 'growl',
-                  displayTimeout: 3000, // Defaut 5000ms
-                  dismissible: false,
-                  sound: true
-              });
+console.info('Nowtify new configuration set : ', Nowtify.setConfig(newConfig))
 
-            break;
-            break;
-    }
-  });
+// 4 — Show some notifications !
+/**
+* Multiple notification
+*/
+setTimeout(function(){
+  Nowtify.show( NOTIFICATIONS_EXAMPLES);
+}, 1000);
+
+/**
+ * Unique notification hide on close
+ */
+$(document).ready(function(){
+  
+  console.log("CONFIG >", Nowtify.getConfig() );
+   
+
+    // Actions on button click.
+    $('button').click(function(){
+      switch( $(this).data('action')) {
+          case 'unique':
+              
+
+                Nowtify.show( notification );
+
+              break;
+          case 'multiple':
+              Nowtify.show( NOTIFICATIONS_EXAMPLES );
+              break;
+           case 'withSound':
+              
+
+                Nowtify.show( notificationWithSound );
+
+              break;
+      }
+    });
+ // });
 });
 
