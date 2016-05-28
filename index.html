@@ -31,7 +31,7 @@
     <a href="https://github.com/tom4dev/react-nowtify"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6286ade715e9bea433b4705870de482a654f78a/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f77686974655f6666666666662e706e67" alt="Fork React Nowtify on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_white_ffffff.png"></a>
         <div class="container">
             <header>
-            <img src="logo.png" class="logo" alt="React Nowtify" />
+            <img src="https://github.com/tom4dev/react-nowtify/blob/develop/logo.png?raw=true" class="logo" alt="React Nowtify" />
             <span class="text-blue">v1.0.0</span>
               <h4>Tiny React component to display notifications. </h4>
             <div class="actions row">
@@ -45,31 +45,34 @@
             <div class="row">
                         <h3>How to use Nowtify in your project ?</h3>
 
-                <h5 class="col-md-4">#1 Format your notifications</h5>
-<pre class="text-blue col-md-8">
-let notifications = [
-     {
-        message     : 'This is the first notification.', // Your message.
-        type        : 'success',                        // success, info, warning, danger
-        dismissible : true                              // Default: false
-    },
-     {
-        message     : 'This is the second notification',
-        type        : 'warning',
-    } 
-];
-</pre>
-            </div>
-            <div class="row">
-                <h5 class="col-md-4">#2 Pass your notifications to Nowtify initialized on an DOM element (indicate element's ID)</h5>
+                <h5 class="col-md-4">#1 Initialize Nowtify</h5>
 <pre class="text-blue col-md-8">
 import Nowtify from 'react-nowtify';
 
-Nowtify.show( notifications, {
-  containerID   : 'ID_CONTAINER',
-  displayTimeout: 6000,         // Default 5000ms
-  dismissible   :  false        // Default false
+Nowtify.init({
+  containerID     : 'ID_CONTAINER',
+  displayTimeout  : 6000,         // Default 5000ms
+  dismissible     : false        // Default false
+  sound           : true          // Default: false
 });
+</pre>
+            </div>
+            <div class="row">
+                <h5 class="col-md-4">#2 Formate and Pass your notifications to Nowtify !</h5>
+<pre class="text-blue col-md-8">
+
+let notifications = [
+    {
+      message     : 'The message of your first notification',
+      type        : 'success', // 'succes','info','warning', 'danger'
+      icon        : 'rebel',  // Default: false (You can specify a specific font-awesome icon !)
+      dismissible : true,     // Default: false
+      hideOnClose : true,     // Default: false
+      sound       : true      // Default: false
+    }
+];
+
+Nowtify.show( notifications );
 </pre>
 
             </div>
