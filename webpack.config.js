@@ -12,7 +12,9 @@ module.exports = {
 
 	output: {
     path        : __dirname + '/dist',
-    filename    : "[name].js"
+    filename    : "[name].js",
+    library     : "Nowtify",
+    libraryTarget : "umd"
   },
     
   devtool: 'source-map',

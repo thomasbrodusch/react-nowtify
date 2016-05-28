@@ -53,13 +53,13 @@ class NowtifyBox extends React.Component {
      * @return  inject new notification to the component notifications pool.
      */
     removeNotification(id){
-      if(!this.state.keepHistory){
-        console.log('Remove TODO');
-
-       // _notifications.splice(id, 1);
-       // TODO: bug normal vu qu'on supprime un elem du tableau donc après tous les id sont faussés.
-       // hint: ajouter les notification avec un systeme key:value ou (key est un timestamp)
-      }
+      // TODO: bug normal vu qu'on supprime un elem du tableau donc après tous les id sont faussés.
+      // HINT: ajouter les notification avec un systeme key:value ou (key est un timestamp)
+      /*
+      
+       if(!this.state.keepHistory){
+        console.log('Remove ', _notification[id]);      
+      }*/
       return true;
     }
 

@@ -1,8 +1,5 @@
-import { Nowtify } from './dist/react-nowtify';
-
-console.log(Nowtify);
-
-var NOTIFICATIONS_EXAMPLES =[ 
+var FAKE_DATA ={
+  notificationsHome: [ 
     {
         message     : 'Welcome on Nowtify',
         type       : 'success',
@@ -23,43 +20,28 @@ var NOTIFICATIONS_EXAMPLES =[
         type        : 'info',
         icon        : 'code-fork'
     }
-];
-
-var notification = [
+  ],
+  notificationHideOnClose : [
     {
-      message     : 'Ooops !',
+      message     : 'Ooops ! I only hide myself on close',
       type       : 'warning',
       dismissible : true,
       hideOnClose: true
-  }];
-
-   var notificationWithSound = [
+  }],
+  notificationWithSound : [
     {
       message     : 'Woooot Wooot ! I\'m a notification with sound !',
       type       : 'success',
-      icon        : 'rebel',
+      icon        : 'rebel', // You can specify a specific font-awesome icon !
       dismissible : true,
       sound: true
-  }];
+  }],
+};
 
-  var notifications =[ 
-    {
-        message     : 'This a cute success message, sexy isn\'t it ?',
-        type       : 'success',
-    },
-    {
-        message     : 'This an error message, be careful !',
-        type       : 'danger',
-        displayTimeout : 3000
+// 1 — Import React-Nowtify.
+import Nowtify from './dist/react-nowtify';
 
-    },
-    {
-        message     : 'Information: you\'re using a great component',
-        type       : 'info',
-    }
-];
-
-// 1 — Init Nowtify
+// 2 — Init Nowtify
 Nowtify.init({
   containerID     : 'nowtify-wrapper', // Default: 'nowtify-wrapper'
   displayTimeout  : 6000,     // Default: 5000 (ms)
@@ -68,10 +50,10 @@ Nowtify.init({
   sound           : false     // Default: true
 });
 
-// 2 — You can get the config
+// 3 — You can get the config
 console.info('Nowtify configuration : ', Nowtify.getConfig());
 
-// 3 - You can set/edit when you want config
+// (3.1) - You can set/edit config whenever you want 
 let newConfig = {
   displayTimeout  : 3000, 
   dismissible     : true,
@@ -81,41 +63,35 @@ let newConfig = {
 console.info('Nowtify new configuration set : ', Nowtify.setConfig(newConfig))
 
 // 4 — Show some notifications !
-/**
-* Multiple notification
-*/
-setTimeout(function(){
-  Nowtify.show( NOTIFICATIONS_EXAMPLES);
-}, 1000);
-
-/**
- * Unique notification hide on close
- */
 $(document).ready(function(){
   
-  console.log("CONFIG >", Nowtify.getConfig() );
+  /**
+  * Multiple notifications
+  */
+  setTimeout(function(){
+    Nowtify.show( FAKE_DATA.notificationsHome );
+  }, 1000);
+
+  setTimeout(function(){
+    Nowtify.show( FAKE_DATA.notificationWithSound );
+  }, 5000);
    
-
-    // Actions on button click.
-    $('button').click(function(){
-      switch( $(this).data('action')) {
-          case 'unique':
-              
-
-                Nowtify.show( notification );
-
-              break;
-          case 'multiple':
-              Nowtify.show( NOTIFICATIONS_EXAMPLES );
-              break;
-           case 'withSound':
-              
-
-                Nowtify.show( notificationWithSound );
-
-              break;
-      }
-    });
- // });
+  setTimeout(function(){
+    Nowtify.show( FAKE_DATA.notificationHideOnClose );
+  }, 6000);
+  // Actions on button click.
+  $('button').click(function(){
+    switch( $(this).data('action')) {
+        case 'unique':
+          Nowtify.show( FAKE_DATA.notificationHideOnClose );
+          break;
+        case 'multiple':
+          Nowtify.show( FAKE_DATA.notificationsHome );
+          break;
+        case 'withSound':
+          Nowtify.show( FAKE_DATA.notificationWithSound );
+          break;
+    }
+  });
 });
 
