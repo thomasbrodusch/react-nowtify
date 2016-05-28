@@ -31,6 +31,8 @@ $ npm i react-nowtify --save
 
  > Initialize Nowtify
 ```javascript
+import Nowtify from 'react-nowtify'
+
 Nowtify.init({
   containerID     : 'ID_CONTAINER',
   displayTimeout  : 6000,         // Default 5000ms
