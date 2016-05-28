@@ -39,7 +39,7 @@ var FAKE_DATA ={
 };
 
 // 1 — Import React-Nowtify.
-import Nowtify from './dist/react-nowtify';
+import Nowtify from './dist/react-nowtify.js';
 
 // 2 — Init Nowtify
 Nowtify.init({

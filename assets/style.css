@@ -10,18 +10,13 @@
 	font-family: 'Helvetica', 'sans-serif';
 }
 
-/** List */
-.nowtify-box__notification-list{
-
-}
-
-/** Notification item */
+/** Notify item */
 .nowtify-box__notification-item{
 	display: flex;
   align-items: center;
 }
 
-/**  Notification icon */
+/**  Notify icon flag item */
 .nowtify-box__notification-item__icon{
     padding: 20px 15px;
     min-width: 45px;
@@ -32,7 +27,7 @@
 .nowtify-box__notification-item__icon_warning{background: #e67e22;}
 .nowtify-box__notification-item__icon_danger{background: #e74c3c;}
 
-/** Notification message */
+/** Nowtify Item Message */
 .nowtify-box__notification-item__message{
   font-size: 14px;
   text-align: left;
@@ -44,13 +39,13 @@
   margin: 0px;
 }
 
-/**  Notification close buttpn */
+/**  Nowtify close button */
 .nowtify-box__notification-item__close{
   cursor:pointer;
   padding: 0px 10px;
 }
 
-/** Transform **/
+/** Transition Transform **/
 .nowtify-box__notification-item_slideLeft{
 	-webkit-animation-name: bounceOutRight;
 	animation-name: bounceOutRight;
@@ -73,7 +68,6 @@
 }
 
 /* Generated with Bounce.js. Edit at http://goo.gl/akZHSq */
-
 @-webkit-keyframes bounceInRight {
   0%, 60%, 75%, 90%, 100% {
     -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -170,17 +164,16 @@
   }
 }
 
-/** Type **/
+/** Nowtify Item Type **/
 .nowtify-box__notification-item_growl{
 	top: 60px;
 	right: 30px;
 	max-width: 300px;
-	/*border-radius: 5px;*/
 	background: rgba(0, 0, 0, 0.5);
   margin-bottom: 10px;
 }
 
-/** Alert Color */
+/** Nowtify item flag color */
 .nowtify-box__notification-item_success{
 	background-color: #2ecc71;
 }

@@ -19,8 +19,7 @@ class NowtifyItem extends React.Component {
             'nowtify-box__notification-item',
             'nowtify-box__notification-item_growl',
             'nowtify-box__notification-item_slideRight'
-        ),
-        audio: './src/assets/notification-sound.mp3'
+        )
     };
   }
 
@@ -28,41 +27,39 @@ class NowtifyItem extends React.Component {
     this.show(this.props.data.displayTimeout ?  this.props.data.displayTimeout : this.props.displayTimeout);
   }
 
-
   /**
-   * Display the notification during a timeout
+   * Display notification during a timeout
    * @param  int displayTimeout during of display
    */
   show(displayTimeout){
     this.props.playSound();  
     
     return setTimeout(function(){
-        let newItemClass = this.state.cssClass;
-         if (!this.props.data.hideOnClose) {
-          newItemClass.splice(newItemClass.indexOf('nowtify-box__notification-item_slideRight'), 1, 'nowtify-box__notification-item_slideLeft');
-          this.hide();
-        }
-        this.setState({
-            cssClass: newItemClass
-        });
+      let newItemClass = this.state.cssClass;
+       if (!this.props.data.hideOnClose) {
+        newItemClass.splice(newItemClass.indexOf('nowtify-box__notification-item_slideRight'), 1, 'nowtify-box__notification-item_slideLeft');
+        this.hide();
+      }
+      this.setState({
+          cssClass: newItemClass
+      });
     }.bind(this), displayTimeout);
   }
   
   /**
-   * Hide the notification
+   * Hide notification
+   * @param boolean noTimeout timeout to hide
    */
   hide(noTimeout = false){
     if(noTimeout){
       this.setState({
-          cssClass: this.state.cssClass.concat(['nowtify-box__notification-item_hide'])
+        cssClass: this.state.cssClass.concat(['nowtify-box__notification-item_hide'])
       });
-      //this.props.onRemove(this.props.position);
     } else {
       setTimeout(function(){
-              this.setState({
-              cssClass: this.state.cssClass.concat(['nowtify-box__notification-item_hide'])
-      });
-      //this.props.onRemove(this.props.position);
+        this.setState({
+          cssClass: this.state.cssClass.concat(['nowtify-box__notification-item_hide'])
+        });
       }.bind(this), 400);
     }
     this.props.onRemove(this.props.position);
@@ -75,14 +72,14 @@ class NowtifyItem extends React.Component {
   itemCssClass(){
     let cssClass = {
       itemClass: this.state.cssClass.join(' ') 
-                + ' ' + this.props.data.className
-                + ' ' + this.props.data.dismissible ? 'nowtify-box__notification-item_dismissible' : '',
+        + ' ' + this.props.data.className
+        + ' ' + this.props.data.dismissible ? 'nowtify-box__notification-item_dismissible' : '',
       iconClass: 'nowtify-box__notification-item__icon_' + this.props.data.type,
       fontAwesomeIcon: this.iconCssClass(this.props.data.icon)
     };
     cssClass.itemClass = this.state.cssClass.join(' ');
     cssClass.itemClass += ' ' + this.props.data.class;
-    cssClass.itemClass += ' ' + this.props.data.dismissible ? 'nowtify-box__notification-item_dismissible' : '';
+    cssClass.itemClass += ' ' + this.props.data.dismissible === true ? 'nowtify-box__notification-item_dismissible' : '';
     return cssClass;
   }
 

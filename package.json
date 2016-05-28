@@ -9,12 +9,13 @@
       "email": "tom4dev@users.noreply.github.com"
     }
   ],
-  "main": "dist/react-nowtify.js",
+  "main": "entry.js",
   "scripts": {
     "start": "http-server -a localhost -p 8000",
-    "ship": "npm install && webpack -p",
+    "ship": "npm install && npm run entry && npm run prod",
     "prod": "webpack -p",
     "dev": "webpack -d",
+    "entry": "webpack -p entry.js",
     "watch": "webpack -d --progress --colors --watch",
     "prePublish": "npm run ship"
   },

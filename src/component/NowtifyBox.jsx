@@ -4,8 +4,8 @@
 */
 
 import NowtifyItem from './NowtifyItem';
-import { defaultConfig } from '../CONST';
-import '../style.css';
+import { defaultConfig } from '../const';
+import 'assets/style.css';
 
 let _notifications = [];
 let _config = defaultConfig;
@@ -15,7 +15,7 @@ class NowtifyBox extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        notificationSound: new Audio('./src/assets/notification-sound.mp3')
+        notificationSound: new Audio('assets/notification-sound.mp3')
       };
     }
     
@@ -48,13 +48,14 @@ class NowtifyBox extends React.Component {
     }
 
     /**
+     * TODO
      * Remove a notification
      * @param  {} notification JSON formatted notification
      * @return  inject new notification to the component notifications pool.
      */
     removeNotification(id){
-      // TODO: bug normal vu qu'on supprime un elem du tableau donc après tous les id sont faussés.
-      // HINT: ajouter les notification avec un systeme key:value ou (key est un timestamp)
+      // TODO
+      // HINT: ajouter les notifications avec un systeme key:value ou (key est un timestamp)
       /*
       
        if(!this.state.keepHistory){
@@ -145,7 +146,7 @@ function getConfig(){
   return _config;
 }
 
-export let Nowtify = { 
+export { 
   init, 
   getConfig, 
   setConfig,

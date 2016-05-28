@@ -6,8 +6,8 @@ var webpack = require("webpack");
 module.exports = {
 
 	entry: {
-    'react-nowtify' : './src/entry.js',
-    'example'       : './example.js'
+    'react-nowtify' : './entry.js',
+    'examples'       : './examples.js'
   },
 
 	output: {
@@ -22,9 +22,9 @@ module.exports = {
   resolve: {
 
     alias: {
-      "babel-polyfill"        : __dirname + '/node_modules/babel-polyfill/dist/polyfill.min.js',
-      react                   : __dirname + '/node_modules/react/react.js',
+      react                   : __dirname + '/node_modules/react/dist/react.min.js',
       "react-dom"             : __dirname + '/node_modules/react-dom/dist/react-dom.min.js',
+      assets                  : __dirname + '/assets'
     },
 
     extensions: [
@@ -41,7 +41,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loaders: ['babel', 'eslint'],
-        exclude: /node_modules/
+        exclude: [/node_modules/, /dist/]
       }
     ],
     loaders: [
