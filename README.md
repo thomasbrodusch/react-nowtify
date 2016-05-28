@@ -1,4 +1,7 @@
 # React-Nowtify
+
+[logo]: https://github.com/tom4dev/react-nowtify/raw/develop/logo.png "Logo React Nowtify"
+
 ###### Version 0.1.0
 
 A tiny React component who displays lovely notifications.
