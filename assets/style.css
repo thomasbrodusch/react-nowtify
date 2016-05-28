@@ -1,0 +1,188 @@
+#nowtify-wrapper{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.nowtify-box{
+	z-index: 1000;
+	color: white;
+	margin-bottom: 20px;
+	font-family: 'Helvetica', 'sans-serif';
+}
+
+/** Notify item */
+.nowtify-box__notification-item{
+	display: flex;
+  align-items: center;
+}
+
+/**  Notify icon flag item */
+.nowtify-box__notification-item__icon{
+    padding: 20px 15px;
+    min-width: 45px;
+}
+.nowtify-box__notification-item__icon_default{background: #95a5a6;}
+.nowtify-box__notification-item__icon_info{background: #379adc;}
+.nowtify-box__notification-item__icon_success{background: #37d078;}
+.nowtify-box__notification-item__icon_warning{background: #e67e22;}
+.nowtify-box__notification-item__icon_danger{background: #e74c3c;}
+
+/** Nowtify Item Message */
+.nowtify-box__notification-item__message{
+  font-size: 14px;
+  text-align: left;
+  padding: 0px 10px;
+  flex-grow: 1;
+}
+.nowtify-box__notification-item__message > p{
+  padding:5px 5px;
+  margin: 0px;
+}
+
+/**  Nowtify close button */
+.nowtify-box__notification-item__close{
+  cursor:pointer;
+  padding: 0px 10px;
+}
+
+/** Transition Transform **/
+.nowtify-box__notification-item_slideLeft{
+	-webkit-animation-name: bounceOutRight;
+	animation-name: bounceOutRight;
+	-webkit-animation-duration: 0.50s;
+	animation-duration: 0.50s;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+}
+.nowtify-box__notification-item_slideRight{
+	-webkit-animation-name: bounceInRight;
+	animation-name: bounceInRight;
+	-webkit-animation-duration: 0.50s;
+	animation-duration: 0.50s;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+}
+
+.nowtify-box__notification-item_hide{
+	display: none;
+}
+
+/* Generated with Bounce.js. Edit at http://goo.gl/akZHSq */
+@-webkit-keyframes bounceInRight {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(3000px, 0, 0);
+    transform: translate3d(3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes bounceInRight {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(3000px, 0, 0);
+    transform: translate3d(3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(-25px, 0, 0);
+    transform: translate3d(-25px, 0, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(-5px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes bounceOutRight {
+  20% {
+    opacity: 1;
+    -webkit-transform: translate3d(-20px, 0, 0);
+    transform: translate3d(-20px, 0, 0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0);
+    transform: translate3d(2000px, 0, 0);
+  }
+}
+
+@keyframes bounceOutRight {
+  20% {
+    opacity: 1;
+    -webkit-transform: translate3d(-20px, 0, 0);
+    transform: translate3d(-20px, 0, 0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0);
+    transform: translate3d(2000px, 0, 0);
+  }
+}
+
+/** Nowtify Item Type **/
+.nowtify-box__notification-item_growl{
+	top: 60px;
+	right: 30px;
+	max-width: 300px;
+	background: rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+}
+
+/** Nowtify item flag color */
+.nowtify-box__notification-item_success{
+	background-color: #2ecc71;
+}
+.nowtify-box__notification-item_warning{
+	background-color: #d35400; 
+}
+.nowtify-box__notification-item_danger{
+	background-color: #c0392b;
+}
+.nowtify-box__notification-item_info{
+	background-color: #3498db; 
+}
