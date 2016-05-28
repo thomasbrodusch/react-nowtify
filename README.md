@@ -3,6 +3,8 @@
 # React-Nowtify
 ###### Version 0.1.0
 
+![Nowtify Demo](https://github.com/tom4dev/react-nowtify/blob/develop/nowtify-demo.gif?raw=true)
+
 A tiny React component who displays lovely notifications.
 author: Thomas Brodusch
 
