@@ -1,4 +1,5 @@
 const defaultConfig = {
+  localPath: '/node_modules/react-nowtify/',
   containerID: 'nowtify-wrapper',
   displayTimeout: 5000,
   transition: 'growl',

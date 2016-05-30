@@ -6,3 +6,4 @@ nowtify-demo.gif
 .editorconfig
 npm-debug.log
 webpack.config.js
+.npmignore
