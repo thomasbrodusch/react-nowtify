@@ -31,6 +31,7 @@ $ npm i react-nowtify --save
 
 > Import React / ReactDOM / React-Nowtify 
 ### Script tag
+
 ```html   
 <!-- Font-Awesome Css Lib for icons. -->
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -46,6 +47,7 @@ $ npm i react-nowtify --save
 ```
 
 ### or ES6 import in your project
+
 ```javascript
 import React from 'react';
 import ReacDOM from 'react-dom';
@@ -53,6 +55,7 @@ import Nowtify from 'react-nowtify';
 ```
 
 > Init Nowtify 
+
 ```javascript
 Nowtify.init({
   containerID     : 'ID_CONTAINER',
@@ -63,6 +66,7 @@ Nowtify.init({
 ``
 
 > Format your notifications and pass it to Nowtify
+
 ```javascript
 var notifications = [
     {
