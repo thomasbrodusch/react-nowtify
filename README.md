@@ -29,9 +29,11 @@ $ npm i react-nowtify --save
 ```
 
 
- > Initialize Nowtify
+ > Import React / ReacDOM / React-Nowtify to initialize Nowtify
 ```javascript
-import Nowtify from 'react-nowtify'
+import React from 'react';
+import ReacDOM from 'react-dom';
+import Nowtify from 'react-nowtify';
 Nowtify.init({
   containerID     : 'ID_CONTAINER',
   displayTimeout  : 6000,         // Default 5000ms
@@ -54,9 +56,9 @@ var notifications = [
 ];
 Nowtify.show( notifications );
 ```
-### et voilà !
-Have a look on 'examples.js' ;)
+### et voilà ! Have a look on [Examples](https://github.com/tom4dev/react-nowtify/blob/master/examples.js)
 
+Tip: You can try React-Nowtify by open 'index.html' in his folder.
 
 
 
@@ -97,7 +99,6 @@ MIT
 
 **Free Software, Hell Yeah!**
 
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
 
  
