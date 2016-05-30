@@ -17,7 +17,6 @@
     "dev": "webpack -d",
     "entry": "webpack -p entry.js",
     "watch": "webpack -d --progress --colors --watch",
-    "prePublish": "npm run ship"
   },
   "repository": {
     "type": "git",
