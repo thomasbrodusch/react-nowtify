@@ -1,11 +1,11 @@
 
 ![Nowtify logo](https://github.com/tom4dev/react-nowtify/blob/develop/logo.png?raw=true)
 # React-Nowtify
-###### Version 0.1.0
+###### Version 0.2.0
 
 ![Nowtify Demo](https://github.com/tom4dev/react-nowtify/blob/develop/nowtify-demo.gif?raw=true)
 
-A tiny React component who displays lovely notifications.
+A tiny library (~20K) to display lovely notifications based on React.
 author: Thomas Brodusch
 
 ### Tech
@@ -56,7 +56,7 @@ var notifications = [
 ];
 Nowtify.show( notifications );
 ```
-### et voilà ! Have a look on [Examples](https://github.com/tom4dev/react-nowtify/blob/master/examples.js)
+### et voilà ! Have a look on > [Examples.js](https://github.com/tom4dev/react-nowtify/blob/master/examples.js)
 
 Tip: You can try React-Nowtify by open 'index.html' in his folder.
 
@@ -86,7 +86,7 @@ $ npm run watch
 ... And you're ready to code !
 
 ### Todos
- - proptype ... 
+ - css >>> Sass 
  - Add transition/animation options
  - Add skin
  - Enable skin customisation
