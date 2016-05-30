@@ -1,6 +1,6 @@
 {
   "name": "react-nowtify",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "A tiny web component based on React to display a cute notification.",
   "author": "Thomas Brodusch <tom4dev@users.noreply.github.com",
   "contributors": [
@@ -9,7 +9,7 @@
       "email": "tom4dev@users.noreply.github.com"
     }
   ],
-  "main": "entry.js",
+  "main": "index.html",
   "scripts": {
     "start": "http-server -a localhost -p 8000",
     "ship": "npm install && npm run entry && npm run prod",
