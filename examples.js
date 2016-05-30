@@ -42,11 +42,12 @@ var FAKE_DATA ={
 
 // 2 — Init Nowtify.
 Nowtify.init({
+  localPath       : './',               // Default: '/nodes_modules/react-nowtify/'
   containerID     : 'nowtify-wrapper', // Default: 'nowtify-wrapper'
-  displayTimeout  : 6000,     // Default: 5000 (ms)
-  dismissible     : false,    // Default: false
-  keepHistory     : false,    // Default: true
-  sound           : false     // Default: true
+  displayTimeout  : 6000,              // Default: 5000 (ms)
+  dismissible     : false,            // Default: false
+  keepHistory     : false,            // Default: true
+  sound           : false             // Default: true
 });
 
 // (3.1) — You can get the config

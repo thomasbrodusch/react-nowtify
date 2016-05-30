@@ -5,8 +5,9 @@
 
 import NowtifyItem from './NowtifyItem';
 import { defaultConfig } from '../const';
-import '../../assets/style.css';
-const _sound = new Audio('../../assets/notification-sound.mp3');
+import 'assets/style.css';
+
+
 let _notifications = [];
 let _config = defaultConfig;
 
@@ -15,7 +16,7 @@ class NowtifyBox extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        notificationSound: _sound
+        notificationSound: new Audio(_config.localPath + 'assets/notification-sound.mp3')
       };
     }
     
@@ -138,6 +139,7 @@ function show(notifications){
  */
 function setConfig(config){
   _config =  {
+    localPath: config.localPath ? config.localPath : _config.localPath,
     containerID: config.containerID ? config.containerID : _config.containerID,
     displayTimeout: config.displayTimeout ? config.displayTimeout : _config.displayTimeout,
     transition: config.transition ? config.transisiton :_config.transition,
