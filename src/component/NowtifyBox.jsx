@@ -5,8 +5,8 @@
 
 import NowtifyItem from './NowtifyItem';
 import { defaultConfig } from '../const';
-import 'assets/style.css';
-
+import '../../assets/style.css';
+const _sound = new Audio('../../assets/notification-sound.mp3');
 let _notifications = [];
 let _config = defaultConfig;
 
@@ -15,7 +15,7 @@ class NowtifyBox extends React.Component {
     constructor(props){
       super(props);
       this.state = {
-        notificationSound: new Audio('assets/notification-sound.mp3')
+        notificationSound: _sound
       };
     }
     
