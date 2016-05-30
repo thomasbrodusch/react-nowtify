@@ -99,6 +99,13 @@ class NowtifyBox extends React.Component {
 };
 
 
+function checkDependancies(){
+  if( React === undefined){
+    console.warning('[ Nowtify ] — Nowtify need ReactJS to work. Import it or add it with this script tag in your HTML: "<script src="https://fb.me/react-15.1.0.js"></script>"');
+    return false;
+  }
+  return true;
+}
 
 /**
  * Init Nowtify
@@ -106,7 +113,10 @@ class NowtifyBox extends React.Component {
  * @return {[type]}        [description]
  */
 function init(config){
-  setConfig(config);
+  if(checkDependancies()){
+    setConfig(config);
+  };
+  return false;
 }
 
 /**

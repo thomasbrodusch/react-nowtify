@@ -89,7 +89,6 @@ class NowtifyItem extends React.Component {
    * @return string      Font-Awesome formated icon
    */
   iconCssClass(icon){
-    console.log
     if( icon === undefined ) {
       icon = this.state.convertClass[this.props.data.type] != undefined ? this.state.convertClass[this.props.data.type] : this.props.data.type;
     }

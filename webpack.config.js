@@ -2,19 +2,17 @@
  * Config for WebPack
  */
 var webpack = require("webpack");
+var libraryName = "react-nowtify";
 
 module.exports = {
 
-	entry: {
-    'react-nowtify' : './entry.js',
-    'examples'       : './examples.js'
-  },
-
+	entry: './src/entry.js',
 	output: {
     path        : __dirname + '/dist',
-    filename    : "[name].js",
-    library     : "Nowtify",
-    libraryTarget : "umd"
+    filename    : libraryName + '.js',
+    library     : 'Nowtify',
+    libraryTarget : 'umd',
+    umdNamedDefine : true
   },
     
   devtool: 'source-map',
@@ -39,14 +37,14 @@ module.exports = {
   module: {
     preLoaders: [
       {
-        test: /\.jsx?$/,
+        test: /(\.jsx|\.js)$/,
         loaders: ['babel', 'eslint'],
-        exclude: [/node_modules/, /dist/]
+        exclude: /(node_modules|dist)/
       }
     ],
     loaders: [
         {
-            test: /\.jsx$/,
+            test: /(\.jsx|\.js)$/,
             exclude: /node_modules/,
             loader: 'babel'
         },

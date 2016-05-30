@@ -1,7 +1,7 @@
 {
   "name": "react-nowtify",
-  "version": "0.1.1",
-  "description": "A tiny web component based on React to display a cute notification.",
+  "version": "0.2.0",
+  "description": "Display lovely notifications",
   "author": "Thomas Brodusch <tom4dev@users.noreply.github.com",
   "contributors": [
     {
@@ -9,29 +9,32 @@
       "email": "tom4dev@users.noreply.github.com"
     }
   ],
-  "main": "index.html",
+  "main": "dist/react-nowtify.js",
   "scripts": {
-    "start": "http-server -a localhost -p 8000",
-    "ship": "npm install && npm run entry && npm run prod",
+    "start": "npm install prePublish && http-server -a localhost -p 8000",
+    "prePublish": "npm install && npm run prod",
     "prod": "webpack -p",
     "dev": "webpack -d",
-    "entry": "webpack -p entry.js",
-    "watch": "webpack -d --progress --colors --watch",
+    "watch": "webpack -d --progress --colors --watch"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tom4dev/react-nowtify.git"
   },
   "keywords": [
+    "nowtify",
     "notification",
     "notifier",
     "notify",
     "alert",
     "message",
+    "toast",
     "react",
     "react-component",
     "react-message",
     "react-notify",
+    "react-nowtify",
+    "react-toast",
     "react-notification",
     "react-alert"
   ],
