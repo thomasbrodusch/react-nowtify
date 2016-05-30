@@ -29,18 +29,38 @@ $ npm i react-nowtify --save
 ```
 
 
- > Import React / ReacDOM / React-Nowtify to initialize Nowtify
+> Import React / ReactDOM / React-Nowtify 
+### Script tag
+```html   
+<!-- Font-Awesome Css Lib for icons. -->
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+.
+.
+.
+<!-- React & React DOM -->
+<script src="https://fb.me/react-15.1.0.min.js"></script>
+<script src="https://fb.me/react-dom-15.1.0.min.js"></script>
+
+<!-- React-Nowtify -->
+<script src="node_modules/react-nowtify/dist/react-nowtify.js"></script>
+```
+
+### or ES6 import in your project
 ```javascript
 import React from 'react';
 import ReacDOM from 'react-dom';
 import Nowtify from 'react-nowtify';
+```
+
+> Init Nowtify 
+```javascript
 Nowtify.init({
   containerID     : 'ID_CONTAINER',
   displayTimeout  : 6000,         // Default 5000ms
   dismissible     :  false        // Default false
   sound           : true          // Default: false
 });
-```
+``
 
 > Format your notifications and pass it to Nowtify
 ```javascript
