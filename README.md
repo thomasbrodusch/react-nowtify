@@ -23,13 +23,13 @@ ___
 
 Nowtify requires [React](https://facebook.github.io/react/) and [Font-Awesome](http://fontawesome.io/) to run.
 
-> Install it with [NPM](https://www.npmjs.com/package/react-nowtify)
+### Install it with [NPM](https://www.npmjs.com/package/react-nowtify)
 ```sh
 $ npm i react-nowtify --save
 ```
 
 
-> Import React / ReactDOM / React-Nowtify 
+### Import React / ReactDOM / React-Nowtify 
 ### Script tag
 
 ```html   
@@ -54,7 +54,7 @@ import ReacDOM from 'react-dom';
 import Nowtify from 'react-nowtify';
 ```
 
-> Init Nowtify 
+# Init Nowtify 
 
 ```javascript
 Nowtify.init({
@@ -63,9 +63,9 @@ Nowtify.init({
   dismissible     :  false        // Default false
   sound           : true          // Default: false
 });
-``
+```
 
-> Format your notifications and pass it to Nowtify
+# Format your notifications and pass it to Nowtify
 
 ```javascript
 var notifications = [
@@ -78,11 +78,12 @@ var notifications = [
       sound       : true      // Default: false
     }
 ];
+
 Nowtify.show( notifications );
 ```
-### et voilà ! Have a look on > [Examples.js](https://github.com/tom4dev/react-nowtify/blob/master/examples.js)
+### et voilà ! 
 
-Tip: You can try React-Nowtify by open 'index.html' in his folder.
+Tip: You can try React-Nowtify by open 'index.html' and see some example by open ['Examples.js'](https://github.com/tom4dev/react-nowtify/blob/master/examples.js) in his root folder (node_modules/react-nowtify/).
 
 
 
