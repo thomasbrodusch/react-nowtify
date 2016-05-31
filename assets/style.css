@@ -18,7 +18,6 @@
 
 /**  Notify icon flag item */
 .nowtify-box__notification-item__icon{
-
     min-width: 40px;
     display: flex;
     align-items: center;
