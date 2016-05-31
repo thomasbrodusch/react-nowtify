@@ -5,7 +5,7 @@
 
 ![Nowtify Demo](https://github.com/tom4dev/react-nowtify/blob/develop/nowtify-demo.gif?raw=true)
 
-A tiny library (~20K) to display lovely notifications based on React.
+A tiny library to display lovely notifications based on React.
 author: Thomas Brodusch
 
 ### Tech
