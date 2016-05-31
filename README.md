@@ -1,7 +1,7 @@
 
 ![Nowtify logo](https://github.com/tom4dev/react-nowtify/blob/develop/logo.png?raw=true)
 # React-Nowtify
-###### Version 0.2.2
+###### Version 0.2.3
 
 ![Nowtify Demo](https://github.com/tom4dev/react-nowtify/blob/develop/nowtify-demo.gif?raw=true)
 
@@ -84,7 +84,7 @@ Nowtify.show( notifications );
 
 ### et voilà ! 
 
-Tip: You can try React-Nowtify by open 'index.html' and see some example by open ['Examples.js'](https://github.com/tom4dev/react-nowtify/blob/master/examples.js) in his root folder (node_modules/react-nowtify/).
+Tip: You can try React-Nowtify by open 'index.html' and see some examples in ['examples/'](https://github.com/tom4dev/react-nowtify/blob/master/examples.js) folder.
 
 
 
