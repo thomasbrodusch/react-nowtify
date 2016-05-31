@@ -18,25 +18,23 @@ Nowtify uses a number of open source projects to work properly:
 * [NotificationSounds](https://notificationsounds.com/) — Sound under Creative Common license
 
  
-### Installation
+### Usage
 ___
 
 Nowtify requires [React](https://facebook.github.io/react/) and [Font-Awesome](http://fontawesome.io/) to run.
 
-### Install it with [NPM](https://www.npmjs.com/package/react-nowtify)
-```sh
-$ npm i react-nowtify --save
-```
 
-### Import React / ReactDOM / React-Nowtify 
 ### Script tag
+Add the following code towards the head section on your page. (To get Font-Awesome Icon)
 
 ```html   
 <!-- Font-Awesome Css Lib for icons. -->
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-.
-.
-.
+```
+
+Add the following code towards the end of the body section on your page. Placing it at the end allows the rest of the page to load first.
+
+```html
 <!-- React & React DOM -->
 <script src="https://fb.me/react-15.1.0.min.js"></script>
 <script src="https://fb.me/react-dom-15.1.0.min.js"></script>
@@ -45,15 +43,36 @@ $ npm i react-nowtify --save
 <script src="node_modules/react-nowtify/dist/react-nowtify.js"></script>
 ```
 
-### or ES6 import in your project
+Initialize the plugin using this code snippet
 
+```html 
+ <script>
+  Nowtify.init({
+    localPath       : '/node_modules/react-nowtify/' // Local path of Nowtify folder, Default: '/node_modules/react-nowtify'
+    containerID     : 'ID_CONTAINER', // Default: 'nowtify-wrapper'
+    displayTimeout  : 6000,         // Default 5000ms
+    dismissible     :  false        // Default false
+    sound           : true          // Default: false
+  });
+ </script>
+```
+
+### Browserify and Webpack
+
+Install from [NPM](https://www.npmjs.com/package/react-nowtify)
+```sh
+$ npm i react-nowtify --save
+```
+
+Require and init
 ```javascript
 import React from 'react';
 import ReacDOM from 'react-dom';
-import Nowtify from 'react-nowtify';
+
+var Nowtify =  require('react-nowtify');
 ```
 
-# Init Nowtify 
+# Init Nowtify
 
 ```javascript
 Nowtify.init({
@@ -63,7 +82,6 @@ Nowtify.init({
   sound           : true          // Default: false
 });
 ```
-
 
 # Format your notifications and pass it to Nowtify
 
@@ -84,7 +102,8 @@ Nowtify.show( notifications );
 
 ### et voilà ! 
 
-Tip: You can try React-Nowtify by open 'index.html' and see some examples in ['examples/'](https://github.com/tom4dev/react-nowtify/blob/master/examples.js) folder.
+
+Tip: You can try React-Nowtify by open 'index.html' and see some examples in ['examples/'](https://github.com/tom4dev/react-nowtify/tree/master/examples) folder.
 
 
 
@@ -123,9 +142,4 @@ License
 
 MIT
 
-
 **Free Software, Hell Yeah!**
-
-
-
- 

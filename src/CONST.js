@@ -1,3 +1,4 @@
+
 const defaultConfig = {
   localPath: '/node_modules/react-nowtify/',
   containerID: 'nowtify-wrapper',
@@ -7,5 +8,9 @@ const defaultConfig = {
   dismissible: false,
   keepHistory: false,
 };
+const defaultNotificationSound = require('file!assets/notification-sound.mp3');
 
-export { defaultConfig };
+export { 
+  defaultConfig,
+  defaultNotificationSound
+};
