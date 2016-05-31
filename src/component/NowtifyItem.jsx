@@ -24,7 +24,7 @@ class NowtifyItem extends React.Component {
     };
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.show(this.props.data.displayTimeout ?  this.props.data.displayTimeout : this.props.displayTimeout);
   }
 

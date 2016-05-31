@@ -1,10 +1,10 @@
 #nowtify-wrapper{
+    z-index: 5000;
     position: absolute;
     top: 15px;
     right: 15px;
 }
 .nowtify-box{
-	z-index: 1000;
 	color: white;
 	margin-bottom: 20px;
 	font-family: 'Helvetica', 'sans-serif';
