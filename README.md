@@ -1,7 +1,7 @@
 
 ![Nowtify logo](https://github.com/tom4dev/react-nowtify/blob/develop/logo.png?raw=true)
 # React-Nowtify
-###### Version 0.2.3
+###### Version 0.3.0
 
 ![Nowtify Demo](https://github.com/tom4dev/react-nowtify/blob/develop/nowtify-demo.gif?raw=true)
 

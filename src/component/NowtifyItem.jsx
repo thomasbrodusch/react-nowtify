@@ -2,6 +2,7 @@
  * React-Nowtify 
  * Notification Item 
  */
+import React from 'react';
 
 class NowtifyItem extends React.Component {
 

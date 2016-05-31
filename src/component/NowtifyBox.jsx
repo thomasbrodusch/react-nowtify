@@ -2,7 +2,8 @@
  * React-Nowtify 
  * Notification Box (Notifications container) 
 */
-
+import React from 'react';
+import ReactDOM from 'react-dom';
 import NowtifyItem from './NowtifyItem';
 import { defaultConfig } from '../const';
 import 'assets/style.css';
@@ -100,24 +101,13 @@ class NowtifyBox extends React.Component {
 };
 
 
-function checkDependancies(){
-  if( React === undefined){
-    console.warning('[ Nowtify ] — Nowtify need ReactJS to work. Import it or add it with this script tag in your HTML: "<script src="https://fb.me/react-15.1.0.js"></script>"');
-    return false;
-  }
-  return true;
-}
-
 /**
  * Init Nowtify
  * @param  {} config configuration JSON formatted
  * @return {[type]}        [description]
  */
 function init(config){
-  if(checkDependancies()){
-    setConfig(config);
-  };
-  return false;
+  return setConfig(config);
 }
 
 /**
