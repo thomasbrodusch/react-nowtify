@@ -18,17 +18,13 @@
 
 /**  Notify icon flag item */
 .nowtify-box__notification-item__icon{
-<<<<<<< HEAD
-    padding: 20px 15px;
-    min-width: 45px;
-=======
+
     min-width: 40px;
     display: flex;
     align-items: center;
 }
 .nowtify-box__notification-item__icon > i{
   margin: 0 auto;
->>>>>>> 1092cfd... v0.3.0
 }
 .nowtify-box__notification-item__icon_default{background: #95a5a6;}
 .nowtify-box__notification-item__icon_info{background: #379adc;}
