@@ -29,18 +29,20 @@ Add the following code towards the head section on your page. (To get Font-Aweso
 
 ```html   
 <!-- Font-Awesome Css Lib for icons. -->
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
 ```
 
 Add the following code towards the end of the body section on your page. Placing it at the end allows the rest of the page to load first.
 
 ```html
-<!-- React & React DOM -->
-<script src="https://fb.me/react-15.1.0.min.js"></script>
-<script src="https://fb.me/react-dom-15.1.0.min.js"></script>
-
 <!-- React-Nowtify -->
 <script src="node_modules/react-nowtify/dist/react-nowtify.js"></script>
+```
+
+Define the wrapper in your HTML
+
+```html 
+  <div id="nowtify-wrapper"></div>
 ```
 
 Initialize the plugin using this code snippet
