@@ -32,7 +32,6 @@
         <div class="container">
             <header>
             <img src="https://github.com/tom4dev/react-nowtify/blob/develop/logo.png?raw=true" class="logo" alt="React Nowtify" />
-            <span class="text-blue">v1.0.0</span>
               <h4>Tiny React component to display notifications. </h4>
             <div class="actions row">
                 <h4>Try it !</h4>
@@ -47,7 +46,8 @@
 
                 <h5 class="col-md-4">#1 Initialize Nowtify</h5>
 <pre class="text-blue col-md-8">
-import Nowtify from 'react-nowtify';
+// Browserify or Webpack
+var Nowtify = require('react-nowtify;
 
 Nowtify.init({
   containerID     : 'ID_CONTAINER',
@@ -86,9 +86,9 @@ Nowtify.show( notifications );
         <!-- No need. Just for examples ... -->
         <script src="node_modules/jquery/dist/jquery.min.js"></script>
 
-        <!-- Don't forget ot import React & ReactDOM -->
+        <!-- Don't forget ot import React & ReactDOM -
         <script src="node_modules/react/dist/react.js"></script>
-        <script src="node_modules/react-dom/dist/react-dom.js"></script> 
+        <script src="node_modules/react-dom/dist/react-dom.js"></script> -->
 
         <!-- import react-nowtify -->
         <script src="dist/react-nowtify.js"></script>

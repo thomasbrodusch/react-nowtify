@@ -13,13 +13,17 @@
 /** Notify item */
 .nowtify-box__notification-item{
 	display: flex;
-  align-items: center;
+  align-items: stretch;
 }
 
 /**  Notify icon flag item */
 .nowtify-box__notification-item__icon{
-    padding: 5%;
-    width: 45px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+}
+.nowtify-box__notification-item__icon > i{
+  margin: 0 auto;
 }
 .nowtify-box__notification-item__icon_default{background: #95a5a6;}
 .nowtify-box__notification-item__icon_info{background: #379adc;}
@@ -31,11 +35,11 @@
 .nowtify-box__notification-item__message{
   font-size: 14px;
   text-align: left;
-  padding: 0px 10px;
+  padding: 3px 10px;
   flex-grow: 1;
 }
 .nowtify-box__notification-item__message > p{
-  padding:5px 5px;
+  padding:10px 5px;
   margin: 0px;
 }
 
@@ -43,6 +47,8 @@
 .nowtify-box__notification-item__close{
   cursor:pointer;
   padding: 0px 10px;
+  display: flex;
+  align-items: center;
 }
 
 /** Transition Transform **/
