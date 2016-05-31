@@ -1,9 +1,11 @@
-logo.png
-nowtify-demo.gif
 .todo
 .eslintrc.js
 .babelrc
 .editorconfig
-npm-debug.log
-webpack.config.js
 .npmignore
+logo.png
+nowtify-demo.gif
+*.log
+webpack.config.js
+index.html
+assets/

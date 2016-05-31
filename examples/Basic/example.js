@@ -1,4 +1,37 @@
-// 1 - Formate your notifications.
+// In your HTML
+// Style in your <HEAD>
+
+/*
+  <link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.min.css">
+ */
+
+// Javascript
+// 
+/* <!-- No need. Just for examples ... -->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+  <!-- Don't forget ot import React & ReactDOM -->
+  <script src="node_modules/react/dist/react.js"></script>
+  <script src="node_modules/react-dom/dist/react-dom.js"></script> 
+
+  <!-- import react-nowtify -->
+  <script src="dist/react-nowtify.js"></script>
+
+  <!-- Init Nowtify and some examples ... -->
+  <script src="examples/Basic/example.js"></script>
+*/
+
+// 2 — Init Nowtify.
+Nowtify.init({
+  localPath       : './',               // Default: '/nodes_modules/react-nowtify/'
+  containerID     : 'nowtify-wrapper', // Default: 'nowtify-wrapper'
+  displayTimeout  : 6000,              // Default: 5000 (ms)
+  dismissible     : false,            // Default: false
+  keepHistory     : false,            // Default: true
+  sound           : false             // Default: true
+});
+
+// 2 - Formate your notifications.
 var FAKE_DATA ={
   notificationsHome: [ 
     {
@@ -40,15 +73,6 @@ var FAKE_DATA ={
 };
 
 
-// 2 — Init Nowtify.
-Nowtify.init({
-  localPath       : './',               // Default: '/nodes_modules/react-nowtify/'
-  containerID     : 'nowtify-wrapper', // Default: 'nowtify-wrapper'
-  displayTimeout  : 6000,              // Default: 5000 (ms)
-  dismissible     : false,            // Default: false
-  keepHistory     : false,            // Default: true
-  sound           : false             // Default: true
-});
 
 // (3.1) — You can get the config
 console.info('Nowtify configuration : ', Nowtify.getConfig());
