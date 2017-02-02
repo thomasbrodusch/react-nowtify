@@ -50,11 +50,11 @@ Initialize the plugin using this code snippet
 ```html 
  <script>
   Nowtify.init({
-    localPath       : '/node_modules/react-nowtify/' // Local path of Nowtify folder, Default: '/node_modules/react-nowtify'
-    containerID     : 'ID_CONTAINER', // Default: 'nowtify-wrapper'
-    displayTimeout  : 6000,         // Default 5000ms
-    dismissible     :  false        // Default false
-    sound           : true          // Default: false
+    localPath      : '/node_modules/react-nowtify/' // Local path of Nowtify folder, Default: '/node_modules/react-nowtify'
+    containerID    : 'ID_CONTAINER', // Default: 'nowtify-wrapper'
+    displayTimeout : 6000,           // Default 5000ms
+    dismissible    : false,          // Default false
+    sound          : true            // Default: false
   });
  </script>
 ```
@@ -78,10 +78,10 @@ var Nowtify =  require('react-nowtify');
 
 ```javascript
 Nowtify.init({
-  containerID     : 'ID_CONTAINER',
-  displayTimeout  : 6000,         // Default 5000ms
-  dismissible     :  false        // Default false
-  sound           : true          // Default: false
+  containerID    : 'ID_CONTAINER',
+  displayTimeout : 6000,         // Default 5000ms
+  dismissible    : false,        // Default false
+  sound          : true          // Default: false
 });
 ```
 
@@ -91,11 +91,11 @@ Nowtify.init({
 var notifications = [
     {
       message     : 'The message of your first notification',
-      type        : 'success', // 'succes','info','warning', 'danger'
-      icon        : 'rebel',  // Default: false (You can specify a specific font-awesome icon !)
-      dismissible : true,     // Default: false
-      hideOnClose : true,     // Default: false
-      sound       : true      // Default: false
+      type        : 'success', // 'success','info','warning','danger'
+      icon        : 'rebel',   // Default: false (You can specify a specific font-awesome icon !)
+      dismissible : true,      // Default: false
+      hideOnClose : true,      // Default: false
+      sound       : true       // Default: false
     }
 ];
 
